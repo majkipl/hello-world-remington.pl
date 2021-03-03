@@ -1,0 +1,37 @@
+.modal-body {
+  padding: 0 50px 50px;
+
+  .product-link {
+    background: no-repeat center / auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 255px;
+    height: 117px;
+    margin: 0 auto;
+
+    &[href*="www.euro.com"] {
+      background-image: url('/images/home/brands/euro.png');
+    }
+    &[href*="www.mediaexpert.pl"] {
+      background-image: url('/images/home/brands/mediaexpert.png');
+    }
+    &[href*="mediamarkt.pl"] {
+      background-image: url('/images/home/brands/mediamarkt.png');
+    }
+    &[href*="www.neonet.pl"] {
+      background-image: url('/images/home/brands/neonet.png');
+    }
+    &[href*="www.komputronik.pl"] {
+      background-image: url('/images/home/brands/komputronik.png');
+    }
+    &[href*="www.mycenter.pl"] {
+      background-image: url('/images/home/brands/mycenter.png');
+    }
+    &[href*="maxelektro.pl"] {
+      background-image: url('/images/home/brands/maxelektro.png');
+      background-size: contain;
+    }
+  }
+}

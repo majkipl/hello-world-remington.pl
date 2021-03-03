@@ -1,0 +1,22 @@
+.error-info {
+    padding: 100px 0;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    .heading {
+        margin-bottom: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .info {
+        margin-bottom: 0;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+    }
+}

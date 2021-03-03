@@ -1,0 +1,33 @@
+// Variables
+@import "./variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Main
+@import "./front/root";
+
+// Header
+@import "./front/header";
+
+// Footer
+@import "./front/footer";
+
+@import "./front/home/home-top";
+@import "./front/home/home-steps";
+@import "./front/home/home-award";
+@import "./front/home/home-products";
+@import "./front/home/home-contact";
+@import "./front/home/home-rules";
+@import "./front/home/home-brands";
+@import "./front/home/home-modal";
+
+//@import "./front/form/form-top";
+//@import "./front/form/form-form";
+
+//@import "./front/thankyou/thankyou-top";
+//@import "./front/thankyou/thankyou-info";
+
+@import "./front/modal/modal-body";
+
+@import "./front/error/error-info";

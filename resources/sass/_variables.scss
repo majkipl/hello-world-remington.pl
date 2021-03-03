@@ -1,7 +1,19 @@
-// Body
-$body-bg: #f8fafc;
+$min-sm: '(min-width: 576px)';
+$min-md: '(min-width: 768px)';
+$min-lg: '(min-width: 992px)';
+$min-xl: '(min-width: 1200px)';
+$min-xxl: '(min-width: 1366px)';
+$min-xxxl: '(min-width: 1710px)';
 
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+$font: Arial, Helvetica, sans-serif;
+$font-title: bodoni-urw, serif;
+
+$transparent: transparent;
+$black: #000000;
+$white: #FFFFFF;
+
+$red: #E52713;
+$border: #B3B3B3;
+$modal: #E6E6E6;
+
+$white-border: rgba(255,255,255,0.2);

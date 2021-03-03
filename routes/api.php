@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/product/link/{product}', [\App\Http\Controllers\Api\LinkController::class, 'product'])->name('api.product.links');
+
 Route::middleware(['api.keys'])->group(function () {
     Route::middleware(['api.auth'])->group(function () {
         //

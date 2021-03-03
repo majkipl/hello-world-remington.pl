@@ -1,0 +1,49 @@
+.home-brands {
+  .content-box {
+    background-color: $black;
+    transform: skewY(-6deg);
+    display: flex;
+    align-items: center;
+    height: 650px;
+    overflow: hidden;
+  }
+
+  .content {
+    background: no-repeat center / auto;
+    background-image: url('/images/home/brands.png');
+    width: 100%;
+    max-width: 1366px;
+    height: 800px;
+    display: flex;
+    align-items: flex-end;
+    transform: skewY(6deg);
+
+    @media #{$min-xxl} {
+      margin: 0 auto;
+    }
+  }
+
+  .container {
+    padding: 50px 0;
+
+    @media #{$min-sm} {
+      padding: 80px 0;
+    }
+
+    @media #{$min-lg} {
+      padding: 140px 0;
+    }
+  }
+
+  .brand-box {
+    height: 158px;
+  }
+
+  .brand-img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    margin: 0 auto;
+  }
+}

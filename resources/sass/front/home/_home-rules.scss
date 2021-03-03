@@ -1,0 +1,72 @@
+.home-rules {
+  background-color: $black;
+  overflow: hidden;
+  transform: skewY(-6deg);
+
+  .content-box {
+    display: flex;
+    align-items: center;
+    height: 650px;
+    overflow: hidden;
+  }
+
+  .content {
+    background: no-repeat center / auto;
+    background-image: url('/images/home/rules.png');
+    width: 100%;
+    max-width: 1366px;
+    height: 800px;
+    display: flex;
+    align-items: flex-end;
+    transform: skewY(6deg);
+
+    @media #{$min-xxl} {
+      margin: 0 auto;
+    }
+  }
+
+  .top-title {
+    &::before {
+      height: 75%;
+    }
+
+    &::after {
+      content: none;
+    }
+  }
+
+  .container {
+    padding: 80px 15px;
+    transform: skewY(6deg);
+    color: $white;
+    text-align: center;
+
+    @media #{$min-sm} {
+      padding: 110px 15px;
+    }
+
+    @media #{$min-lg} {
+      padding: 170px 15px;
+    }
+  }
+
+  .lead {
+    margin-bottom: 55px;
+    font-family: $font-title;
+    font-size: 22px;
+    line-height: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .button {
+    margin-bottom: 25px;
+  }
+
+  .text {
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 22px;
+    letter-spacing: 1px;
+  }
+}

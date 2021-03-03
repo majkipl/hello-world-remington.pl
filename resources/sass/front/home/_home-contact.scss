@@ -1,0 +1,69 @@
+.home-contact {
+    background-color: $white;
+    overflow: hidden;
+    transform: skewY(-6deg);
+    transition: all 0.25s;
+
+    .container {
+        padding: 80px 15px;
+        transform: skewY(6deg);
+        color: $black;
+        text-align: center;
+
+        @media #{$min-sm} {
+            padding: 110px 15px;
+        }
+
+        @media #{$min-lg} {
+            padding: 200px 15px;
+        }
+    }
+
+    .lead {
+        margin-bottom: 0;
+        font-family: bodoni-urw, serif;
+        font-size: 22px;
+        line-height: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: left;
+        padding-left: 45px;
+        position: relative;
+
+        a {
+            color: $red;
+            text-transform: lowercase;
+            font-family: $font;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        svg {
+            position: absolute;
+            left: 0;
+            top: 8px;
+
+            path {
+                fill: $red;
+            }
+        }
+    }
+
+    &:hover {
+        background-color: $red;
+
+        .container {
+            color: $white;
+
+            a {
+                color: $white;
+            }
+
+            svg {
+                path {
+                    fill: $white;
+                }
+            }
+        }
+    }
+}

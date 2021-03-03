@@ -1,0 +1,89 @@
+.header {
+    height: 80px;
+
+    .navbar {
+        background-color: $white;
+        padding: 15px 20px;
+    }
+
+    .logo {
+        width: 201px;
+        height: 50px;
+        padding: 2px 3px;
+        margin: 0 10px;
+    }
+
+    .navbar-toggler {
+        width: 46px;
+        height: 46px;
+        padding: 0;
+        border: none;
+
+        .toggler-icon {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $black;
+            width: 35px;
+            height: 4px;
+            border-radius: 2px;
+            transition: transform .25s;
+
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                background-color: $black;
+                width: 35px;
+                height: 4px;
+                border-radius: 2px;
+                transition: transform .25s;
+            }
+
+            &::before {
+                top: -10px;
+            }
+
+            &::after {
+                top: 10px;
+            }
+        }
+
+        &[aria-expanded=true] {
+            .toggler-icon {
+                transform: translate(-50%, -50%) rotate(-45deg);
+
+                &::before {
+                    transform: translateY(10px) rotate(90deg);
+                }
+
+                &::after {
+                    transform: translateY(-10px) rotate(90deg);
+                }
+            }
+        }
+    }
+
+    #navbar {
+        margin-top: 17px;
+
+        @media #{$min-lg} {
+            margin-top: 0;
+        }
+
+        .nav-link {
+            padding: 13px;
+            color: $black;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 22px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            @media #{$min-lg} {
+                margin-left: 44px;
+            }
+        }
+    }
+}
