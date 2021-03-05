@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\CacheModelTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Link extends Model
 {
-    use HasFactory;
+    use HasFactory, CacheModelTrait;
 
     protected $fillable = ['id', 'url', 'product_id'];
 
