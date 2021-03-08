@@ -1,0 +1,73 @@
+.form-top {
+  position: relative;
+  transform: skewY(-6deg);
+
+  .title-img {
+    background-repeat: no-repeat;
+    background-position: left -37.5vw bottom 120px, left -35vw bottom 80px;
+    background-size: 120vw;
+    background-image: url('/images/form/word-1.png'), url('/images/form/word-2.png');
+    mix-blend-mode: hard-light;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform:  translateX(-50%) skewY(6deg);
+    width: 100%;
+    max-width: 1710px;
+    height: 100%;
+
+    @media #{$min-sm} {
+      background-position: left -20vw bottom 130px, left -17.5vw bottom 70px;
+      background-size: 75vw;
+    }
+
+    @media #{$min-xxl} {
+      background-position: left -15vw bottom 120px, left -12.5vw bottom 30px;
+    }
+
+    @media #{$min-xxxl} {
+      background-position: left -200px bottom 120px, left -250px bottom 30px;
+      background-size: auto;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        left: -100vw;
+        transform: skewY(-6deg);
+        transform-origin: 100%;
+        background-color: $red;
+        width: 100vw;
+        height: 67px;
+      }
+
+      &::before {
+        bottom: 141px;
+      }
+      &::after {
+        bottom: 56px;
+      }
+    }
+  }
+
+  .content {
+    background-repeat: no-repeat;
+    background-position: center bottom, center bottom 12px;
+    background-size: auto;
+    background-image: url('/images/svg/top.svg'), url('/images/form/top.png');
+    background-blend-mode: multiply;
+    max-width: 1306px;
+    height: 492px;
+    margin: 0 15px;
+    display: flex;
+    align-items: flex-end;
+    transform: skewY(6deg);
+
+    @media #{$min-sm} {
+      margin: 0 30px;
+    }
+
+    @media #{$min-xxl} {
+      margin: 0 auto;
+    }
+  }
+}

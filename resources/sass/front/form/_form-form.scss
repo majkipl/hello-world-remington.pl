@@ -1,0 +1,261 @@
+.form {
+    padding: 50px 0 90px;
+
+    @media #{$min-sm} {
+        padding: 60px 0 110px;
+    }
+
+    @media #{$min-lg} {
+        padding: 70px 0 140px;
+    }
+
+    .row-form {
+        margin-bottom: 28px;
+    }
+
+    .field {
+        width: 100%;
+        position: relative;
+        flex-shrink: 0;
+        min-height: 50px;
+        margin-bottom: 32px;
+
+        .label {
+            position: absolute;
+            top: 15px;
+            left: 30px;
+            background-color: $white;
+            max-width: calc(100% - 30px);
+            padding: 0 5px;
+            color: $border;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            transform-origin: 0 0;
+            pointer-events: none;
+            -webkit-transition: 0.2s ease-out all;
+            transition: 0.2s ease-out all;
+        }
+
+        .input,
+        .textarea {
+            background-color: $transparent;
+            display: block;
+            width: 100%;
+            height: 56px;
+            padding: 15px;
+            border: 1px solid $border;
+            color: $black;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .input {
+            height: 50px;
+
+            &.select {
+                appearance: none;
+                background: no-repeat right 23px center / auto;
+                background-image: url('/images/svg/form/arrow.svg'),
+                linear-gradient(
+                    90deg,
+                    $transparent calc(100% - 34px),
+                    $border calc(100% - 34px),
+                    $border calc(100% - 33px),
+                    $transparent calc(100% - 33px)
+                );
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                text-align: left;
+                text-align-last: left;
+                padding: 0 15px;
+
+                &.valid {
+                    + .placeholder {
+                        color: $black;
+                        transform: scale(0.8) translateY(-30px);
+                        width: auto;
+                        background-color: rgba(255, 255, 255, 1);
+                    }
+                }
+
+                > option {
+                    color: $black;
+                    padding-left: 15px;
+                }
+
+                + .placeholder {
+                    position: absolute;
+                    top: 13px;
+                    left: 30px;
+                    background-color: rgba(255, 255, 255, 0);
+                    max-width: calc(100% - 30px);
+                    padding: 0 5px;
+                    color: $border;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    transition: transform 0.25s;
+                    transform-origin: 0 0;
+                    pointer-events: none;
+                    width: calc(100% - 60px);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .textarea {
+            resize: none;
+            min-height: 150px;
+        }
+
+        .input,
+        .textarea {
+            &:focus {
+                outline: none;
+            }
+
+            &:focus-visible {
+                border: 3px solid $black;
+            }
+        }
+
+        .input:focus + .label,
+        .textarea:focus + .label,
+        .input:not(:placeholder-shown) + .label,
+        .textarea:not(:placeholder-shown) + .label
+        {
+            top: -11px;
+            font-size: 1rem;
+            padding: 0 10px;
+            height: 22px;
+            line-height: 22px;
+            background-color: $white;
+            color: $black;
+        }
+
+        .label-checkbox {
+            min-height: 33px;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 32px;
+            color: $black;
+            font-size: 13px;
+            line-height: 22px;
+            letter-spacing: 1px;
+
+            &:before {
+                content: "";
+                height: 40px;
+                width: 40px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                -webkit-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+                border: 2px solid $border;
+            }
+
+            &:hover:before {
+                box-shadow: 0px 0px 20px 7px rgba(255, 255, 255, 0.15);
+            }
+        }
+
+        .input-checkbox {
+            &:focus + .label-checkbox:before {
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+
+            position: absolute;
+            z-index: -1000;
+            left: -1000px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            width: 1px;
+            border: 0;
+
+            &:checked + .label-checkbox {
+                &:before {
+                    background-color: transparent;
+                }
+
+                &:after {
+                    background-color: $red;
+                    background: no-repeat center / auto url('/images/svg/form/check.svg');
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                }
+            }
+        }
+
+        .error-post {
+            color: $red;
+        }
+
+        &.fieldset {
+            width: auto;
+        }
+
+        &.file-uploads {
+            .thumbs {
+
+                img {
+                    max-width: 100%;
+                    overflow: hidden;
+                }
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+                float: left;
+                position: relative;
+                transition: all 0.5s ease;
+                padding: 10px 15px;
+                height: 100%;
+                min-height: 300px;
+                border: 1px solid $border;
+
+                p {
+                    margin: 30px 0;
+                }
+            }
+
+            .hidden {
+                display: none;
+
+                img {
+                    margin: 0 auto;
+                    max-width: 300px;
+                    display: block;
+                }
+            }
+
+            .uploads-d-none {
+                overflow: hidden;
+                width: 0;
+                height: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+    .button {
+        margin: 40px 0;
+    }
+}

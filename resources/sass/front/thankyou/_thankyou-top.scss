@@ -1,0 +1,68 @@
+.thankyou-top {
+  position: relative;
+  transform: skewY(-6deg);
+
+  .title-img {
+    background-repeat: no-repeat;
+    background-position: left -30vw bottom 100px;
+    background-size: 120vw;
+    background-image: url('/images/thankyou/word-1.png');
+    mix-blend-mode: hard-light;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform:  translateX(-50%) skewY(6deg);
+    width: 100%;
+    max-width: 1710px;
+    height: 100%;
+
+    @media #{$min-sm} {
+      background-size: 75vw;
+      background-position: left -15vw bottom 100px;
+    }
+
+    @media #{$min-xxl} {
+      background-size: 50vw;
+      background-position: left calc(175px - 15vw) bottom 75px;
+    }
+
+    @media #{$min-xxxl} {
+      background-position: left -125px bottom 75px;
+      background-size: auto;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -100vw;
+        bottom: 88px;
+        transform: skewY(-6deg);
+        transform-origin: 100%;
+        background-color: $red;
+        width: 100vw;
+        height: 67px;
+      }
+    }
+  }
+
+  .content {
+    background-repeat: no-repeat;
+    background-position: center bottom, center bottom 12px;
+    background-size: auto;
+    background-image: url('/images/svg/top.svg'), url('/images/thankyou/top.png');
+    background-blend-mode: multiply;
+    max-width: 1306px;
+    height: 492px;
+    margin: 0 15px;
+    display: flex;
+    align-items: flex-end;
+    transform: skewY(6deg);
+
+    @media #{$min-sm} {
+      margin: 0 30px;
+    }
+
+    @media #{$min-xxl} {
+      margin: 0 auto;
+    }
+  }
+}

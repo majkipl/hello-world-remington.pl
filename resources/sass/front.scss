@@ -3,6 +3,7 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import "./plugins/bootstrap-datetimepicker";
 
 // Main
 @import "./front/root";
@@ -22,11 +23,11 @@
 @import "./front/home/home-brands";
 @import "./front/home/home-modal";
 
-//@import "./front/form/form-top";
-//@import "./front/form/form-form";
+@import "./front/form/form-top";
+@import "./front/form/form-form";
 
-//@import "./front/thankyou/thankyou-top";
-//@import "./front/thankyou/thankyou-info";
+@import "./front/thankyou/thankyou-top";
+@import "./front/thankyou/thankyou-info";
 
 @import "./front/modal/modal-body";
 
