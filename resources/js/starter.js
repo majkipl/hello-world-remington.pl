@@ -113,11 +113,11 @@ const starter = {
 
         onInputs: function () {
             $(document).on("input", ".input", function (e) {
-                e.target.value !== "" ? $(this).addClass("valid").removeClass("invalid") : $(this).removeClass("valid");
+                e.target.value !== "" ? $(this).addClass("not-empty") : $(this).removeClass("not-empty");
             });
 
             $(document).on("input", ".textarea", function (e) {
-                e.target.value !== "" ? $(this).addClass("valid").removeClass("invalid") : $(this).removeClass("valid");
+                e.target.value !== "" ? $(this).addClass("not-empty") : $(this).removeClass("not-empty");
             });
         },
 

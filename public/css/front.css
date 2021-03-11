@@ -10659,13 +10659,12 @@ img {
   margin-bottom: 28px;
 }
 .form .field {
-  width: 100%;
   position: relative;
   flex-shrink: 0;
   min-height: 50px;
   margin-bottom: 32px;
 }
-.form .field .label {
+.form .field .placeholder {
   position: absolute;
   top: 15px;
   left: 30px;
@@ -10679,6 +10678,8 @@ img {
   transform-origin: 0 0;
   pointer-events: none;
   transition: 0.2s ease-out all;
+  font-size: initial;
+  line-height: inherit;
 }
 .form .field .input,
 .form .field .textarea {
@@ -10691,6 +10692,13 @@ img {
   color: #000000;
   font-size: 16px;
   line-height: 24px;
+}
+.form .field .input.not-empty + .placeholder,
+.form .field .textarea.not-empty + .placeholder {
+  color: #000000;
+  transform: scale(0.8) translateY(-30px);
+  width: auto;
+  background-color: rgb(255, 255, 255);
 }
 .form .field .input {
   height: 50px;
@@ -10709,32 +10717,9 @@ img {
        text-align-last: left;
   padding: 0 15px;
 }
-.form .field .input.select.valid + .placeholder {
-  color: #000000;
-  transform: scale(0.8) translateY(-30px);
-  width: auto;
-  background-color: rgb(255, 255, 255);
-}
 .form .field .input.select > option {
   color: #000000;
   padding-left: 15px;
-}
-.form .field .input.select + .placeholder {
-  position: absolute;
-  top: 13px;
-  left: 30px;
-  background-color: rgba(255, 255, 255, 0);
-  max-width: calc(100% - 30px);
-  padding: 0 5px;
-  color: #B3B3B3;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  transition: transform 0.25s;
-  transform-origin: 0 0;
-  pointer-events: none;
-  width: calc(100% - 60px);
-  opacity: 1;
 }
 .form .field .textarea {
   resize: none;

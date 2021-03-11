@@ -1,3 +1,9 @@
+$border: #224f9e;
+$white: #FFFFFF;
+$transparent: transparent;
+$red: #E52713;
+$black: #000000;
+
 body {
     background: #f1f4f7;
     font-size: 14px;
@@ -1815,44 +1821,7 @@ p.back-link {
     left: 10px;
 }
 
-.file-uploads {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.file-uploads .thumbs {
-    margin-bottom: 30px;
-}
-.file-uploads .info {
-    width: 290px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #224f9e;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-}
-.file-uploads .info img {
-    max-width: 48px;
-    margin-bottom: 15px;
-}
-.file-uploads .hidden {
-    display: none;
-}
-.file-uploads .hidden img {
-    margin: 0 auto;
-    max-width: 300px;
-    display: block;
-}
-.file-uploads .uploads-d-none {
-    overflow: hidden;
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+@import "./front/form/field";
 
 .error-post {
     color: #e91720;
@@ -1903,6 +1872,10 @@ table.item.show.data tr > td {
 table.item.show.data tr > td:first-child {
     min-width: 150px;
     font-weight: 700;
+}
+
+table.item.show.data tr > td img {
+    max-width: 100%;
 }
 
 .bt-table .icon {

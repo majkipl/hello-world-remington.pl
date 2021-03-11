@@ -2032,43 +2032,191 @@ p.back-link {
   left: 10px;
 }
 
-.file-uploads {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.field {
+  position: relative;
+  flex-shrink: 0;
+  min-height: 50px;
+  margin-bottom: 32px;
 }
-
-.file-uploads .thumbs {
-  margin-bottom: 30px;
+.field .placeholder {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  background-color: #FFFFFF;
+  max-width: calc(100% - 30px);
+  padding: 0 5px;
+  color: #224f9e;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transform-origin: 0 0;
+  pointer-events: none;
+  transition: 0.2s ease-out all;
+  font-size: initial;
+  line-height: inherit;
 }
-
-.file-uploads .info {
-  width: 290px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
+.field .input,
+.field .textarea {
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  height: 56px;
+  padding: 15px;
   border: 1px solid #224f9e;
+  color: #000000;
+  font-size: 16px;
+  line-height: 24px;
+}
+.field .input.not-empty + .placeholder,
+.field .textarea.not-empty + .placeholder {
+  color: #000000;
+  transform: scale(0.8) translateY(-30px);
+  width: auto;
+  background-color: rgb(255, 255, 255);
+}
+.field .input {
+  height: 50px;
+}
+.field .input.select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: no-repeat right 23px center/auto;
+  background-image: url("/images/svg/form/arrow.svg"), linear-gradient(90deg, transparent calc(100% - 34px), #224f9e calc(100% - 34px), #224f9e calc(100% - 33px), transparent calc(100% - 33px));
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+  -moz-text-align-last: left;
+       text-align-last: left;
+  padding: 0 15px;
+}
+.field .input.select > option {
+  color: #000000;
+  padding-left: 15px;
+}
+.field .textarea {
+  resize: none;
+  min-height: 150px;
+}
+.field .input:focus,
+.field .textarea:focus {
+  outline: none;
+}
+.field .input:focus-visible,
+.field .textarea:focus-visible {
+  border: 3px solid #000000;
+}
+.field .input:not(:-moz-placeholder-shown) + .label, .field .textarea:not(:-moz-placeholder-shown) + .label {
+  top: -11px;
+  font-size: 1rem;
+  padding: 0 10px;
+  height: 22px;
+  line-height: 22px;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+.field .input:focus + .label,
+.field .textarea:focus + .label,
+.field .input:not(:placeholder-shown) + .label,
+.field .textarea:not(:placeholder-shown) + .label {
+  top: -11px;
+  font-size: 1rem;
+  padding: 0 10px;
+  height: 22px;
+  line-height: 22px;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+.field .label-checkbox {
+  min-height: 33px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 32px;
+  color: #000000;
+  font-size: 13px;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
+.field .label-checkbox:before {
+  content: "";
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease;
+  border: 2px solid #224f9e;
+}
+.field .label-checkbox:hover:before {
+  box-shadow: 0px 0px 20px 7px rgba(255, 255, 255, 0.15);
+}
+.field .input-checkbox {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+}
+.field .input-checkbox:focus + .label-checkbox:before {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.field .input-checkbox:checked + .label-checkbox:before {
+  background-color: transparent;
+}
+.field .input-checkbox:checked + .label-checkbox:after {
+  background-color: #E52713;
+  background: no-repeat center/auto url("/images/svg/form/check.svg");
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.field .error-post {
+  color: #E52713;
+}
+.field.fieldset {
+  width: auto;
+}
+.field.file-uploads .thumbs img {
+  max-width: 100%;
+  overflow: hidden;
+}
+.field.file-uploads .info {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
+  float: left;
+  position: relative;
+  transition: all 0.5s ease;
+  padding: 10px 15px;
+  height: 100%;
+  min-height: 300px;
+  border: 1px solid #224f9e;
 }
-
-.file-uploads .info img {
-  max-width: 48px;
-  margin-bottom: 15px;
+.field.file-uploads .info p {
+  margin: 30px 0;
 }
-
-.file-uploads .hidden {
+.field.file-uploads .hidden {
   display: none;
 }
-
-.file-uploads .hidden img {
+.field.file-uploads .hidden img {
   margin: 0 auto;
   max-width: 300px;
   display: block;
 }
-
-.file-uploads .uploads-d-none {
+.field.file-uploads .uploads-d-none {
   overflow: hidden;
   width: 0;
   height: 0;
@@ -2135,6 +2283,10 @@ table.item.show.data tr > td {
 table.item.show.data tr > td:first-child {
   min-width: 150px;
   font-weight: 700;
+}
+
+table.item.show.data tr > td img {
+  max-width: 100%;
 }
 
 .bt-table .icon {

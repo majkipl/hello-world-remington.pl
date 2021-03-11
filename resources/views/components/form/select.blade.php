@@ -18,6 +18,6 @@
             @endisset
         @endforeach
     </select>
-    <div class="placeholder">{{ $placeholder }}{{ $required ? '*' : '' }}</div>
+    <label class="placeholder">{{ $placeholder }}{{ $required ? '*' : '' }}</label>
     <span class="error-post error-{{ $name }}">{{ $error }}</span>
 </div>

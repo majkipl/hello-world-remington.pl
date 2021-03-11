@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Enums\ShopType;
+use App\Enums\Voivodeship;
 use App\Http\Requests\StoreApplicationRequest;
 use App\Mail\ApplicationMail;
 use App\Models\Application;
@@ -30,6 +32,9 @@ class ApplicationService
             if( $request->file('img_ean') ) {
                 $application->img_ean = $request->file('img_ean')->store('public/eans');
             }
+
+            $application->voivodeship = Voivodeship::ALL[$request->input('voivodeship')];
+            $application->shop_type = ShopType::TYPES[$request->input('shop_type')];
 
             $application->shop_id = $request->input('shop');
             $application->product_id = $request->input('product');

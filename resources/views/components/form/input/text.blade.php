@@ -11,6 +11,6 @@
            @endif
            class="input {{ $class ?? '' }}"
            autocomplete="off"/>
-    <label class="label" for="{{ $name }}">{{ $placeholder }}{{ $required ? '*' : '' }}</label>
+    <label class="placeholder" for="{{ $name }}">{{ $placeholder }}{{ $required ? '*' : '' }}</label>
     <span class="error-post error-{{ $name }}">{{ $error }}</span>
 </div>

@@ -3219,10 +3219,10 @@ var starter = {
     },
     onInputs: function onInputs() {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on("input", ".input", function (e) {
-        e.target.value !== "" ? jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass("valid").removeClass("invalid") : jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass("valid");
+        e.target.value !== "" ? jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass("not-empty") : jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass("not-empty");
       });
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on("input", ".textarea", function (e) {
-        e.target.value !== "" ? jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass("valid").removeClass("invalid") : jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass("valid");
+        e.target.value !== "" ? jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass("not-empty") : jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass("not-empty");
       });
     },
     onSubmit: function onSubmit() {
