@@ -36,9 +36,21 @@
                     @endif
                 @else
                     @can('isAdmin')
-{{--                        <li>--}}
-{{--                            <a href="{{ route('back.application') }}">Zgłoszenia</a>--}}
-{{--                        </li>--}}
+                        <li>
+                            <a href="{{ route('back.whence') }}">Skąd wiesz?</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('back.product') }}">Produkty</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('back.link') }}">Linki</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('back.shop') }}">Sklepy</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('back.application') }}">Zgłoszenia</a>
+                        </li>
                     @endcan
                     <li class="dropdown">
                         <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button"

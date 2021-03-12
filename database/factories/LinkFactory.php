@@ -14,7 +14,7 @@ class LinkFactory extends Factory
      */
     public function definition()
     {
-        $product = Product::select()->inRandomOrder()->first();
+        $product = Product::count() ? Product::inRandomOrder()->first() : Product::factory()->create();
 
         return [
             'url' => $this->faker->url,
