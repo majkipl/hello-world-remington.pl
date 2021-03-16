@@ -17,6 +17,7 @@ php artisan migrate:fresh --seed    # robimy migracje wraz z seed'ami #
 php artisan cache:clear             # czyścimy cache
 php artisan config:clear            # czyścimy konfiguracje
 php artisan route:clear             # czyścimy routing
+php artisan jwt:secret
 
 cd public
 ln -sf ../storage/app/public/ storage
