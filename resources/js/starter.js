@@ -261,7 +261,6 @@ const starter = {
                 case 'shop_type':
                     return starter.form.validator.isOption(value, 'Rodzaj sklepu', 0, 1);
                 case 'buyday':
-                    console.log('buyday');
                     return starter.form.validator.isDate(value, 'Data zakupu', event);
                 case 'shop':
                     return starter.form.validator.isOption(value, 'Sklep', 1);

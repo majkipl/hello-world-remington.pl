@@ -1,10 +1,20 @@
 FROM php:8.0.3-apache
+ARG DOCKER_AUTHOR=""
 LABEL authors=${DOCKER_AUTHOR}
 
-RUN apt-get update -y
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
-RUN apt-get install -y nodejs zip unzip
+# Debian Buster is EOL; point repositories to archive.debian.org
+RUN sed -i 's/deb.debian.org/archive.debian.org/g' /etc/apt/sources.list && \
+    sed -i 's/security.debian.org\/debian-security/archive.debian.org\/debian-security/g' /etc/apt/sources.list && \
+    sed -i '/buster-updates/d' /etc/apt/sources.list
+
+RUN apt-get update -y && apt-get install -y zip unzip && rm -rf /var/lib/apt/lists/*
 RUN docker-php-ext-install pdo pdo_mysql bcmath
+
+# Copy Node.js 14 and npm from official image to avoid deprecated NodeSource setup scripts
+COPY --from=node:14-buster /usr/local/bin/node /usr/local/bin/
+COPY --from=node:14-buster /usr/local/lib/node_modules/npm /usr/local/lib/node_modules/npm
+RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm && \
+    ln -s /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
 
 WORKDIR /var/www/html
 
